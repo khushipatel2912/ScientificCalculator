@@ -17,7 +17,7 @@ FROM openjdk:17-jre-slim
 WORKDIR /app
 
 # Copy the built jar file from the previous stage
-COPY --from=build /app/target/calculator-1.0-SNAPSHOT.jar calculator.jar
+COPY target/scientific-calculator-1.0-SNAPSHOT.jar /app/scientific-calculator.jar
 
 # Set execution command
 CMD ["java", "-jar", "calculator.jar"]
