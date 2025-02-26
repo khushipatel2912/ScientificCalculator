@@ -19,6 +19,11 @@ pipeline {
         }
 
         stage('Build and Test') {
+             agent {
+                docker {
+                    image 'maven:3.8.1'  // Runs Maven inside a container
+                }
+            }
             steps {
                 script {
                     sh 'mvn clean package'
