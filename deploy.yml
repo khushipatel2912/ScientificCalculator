@@ -1,38 +1,29 @@
 ---
-- name: Deploy Calculator Application
+- name: Pull Docker Image from Docker Hub
   hosts: localhost
   remote_user: khushi
-  become: true
-
+  become: false
   tasks:
-    - name: Install Docker and dependencies
-      apt:
-        name: "{{ item }}"
-        state: present
-      with_items:
-        - docker.io
-        - python3-pip
-        - python3-docker
 
-    - name: Pull the latest Docker image
+    - name: Install Python Docker SDK
+      pip:
+        name: docker
+        executable: pip3
+
+    - name: Pull Docker Image
       docker_image:
-        name: "khushi2912/calculator"
+        name: "kanang/scientific_calculator"
         source: pull
       register: docker_pull_result
 
-    - name: Display Docker pull result
+    - name: Display Docker Pull Result
       debug:
         var: docker_pull_result
-
-    - name: Stop and remove any existing container
-      shell: |
-        docker stop calculator || true
-        docker rm calculator || true
-      ignore_errors: yes
-
-    - name: Run the new calculator container
-      docker_container:
-        name: calculator
-        image: "khushi2912/calculator"
+        
+    - name: Start Docker service
+      service:
+        name: docker
         state: started
-        restart_policy: always
+
+    - name: Running container
+      shell: docker run -it -d --name calculator khushi2912/calculator /bin/bash
