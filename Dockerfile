@@ -1,10 +1,8 @@
+FROM openjdk:17-jdk-slim
 FROM ubuntu:latest
 
 # Set working directory
 WORKDIR /app
-
-# Use a minimal JRE image for runtime
-FROM openjdk:17-jre-slim
 
 # Set working directory
 WORKDIR /app
