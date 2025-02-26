@@ -17,7 +17,7 @@ FROM openjdk:11-jre-slim
 WORKDIR /app
 
 # Copy the built jar file from the previous stage
-COPY --from=build /target/Calculator-1.0-SNAPSHOT.jar calculator.jar
+COPY --from=build target/Calculator-1.0-SNAPSHOT.jar calculator.jar
 
 # Set execution command
 CMD ["java", "-jar", "calculator.jar"]
