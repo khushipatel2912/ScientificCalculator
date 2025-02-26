@@ -5,7 +5,7 @@ pipeline {
     }
 
     environment {
-        DOCKER_IMAGE_NAME = 'khushi2912/calculator'
+        DOCKER_IMAGE_NAME = 'calculator'
         GITHUB_REPO_URL = 'https://github.com/khushipatel2912/ScientificCalculator.git'
     }
 
