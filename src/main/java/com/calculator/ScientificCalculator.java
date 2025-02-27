@@ -37,10 +37,10 @@ public class ScientificCalculator {
         ScientificCalculator calculator = new ScientificCalculator();
 
         System.out.println("Scientific Calculator Menu:");
-        System.out.println("1. Square Root (√x)");
-        System.out.println("2. Factorial (x!)");
-        System.out.println("3. Natural Logarithm (ln(x))");
-        System.out.println("4. Power Function (x^y)");
+        System.out.println("1. Square Root(√x)");
+        System.out.println("2. Factorial(x!)");
+        System.out.println("3. Natural Logarithm(ln(x))");
+        System.out.println("4. Power Function(x^y)");
         System.out.print("Enter your choice: ");
 
         int choice = scanner.nextInt();
