@@ -1,5 +1,4 @@
 FROM openjdk:17-jdk-slim
-FROM ubuntu:latest
 
 # Set working directory
 WORKDIR /app
