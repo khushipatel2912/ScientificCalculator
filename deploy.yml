@@ -12,7 +12,7 @@
 
     - name: Pull Docker Image
       docker_image:
-        name: "khushi2912/scientific_calculator"
+        name: "khushi2912/calculator"
         source: pull
       register: docker_pull_result
 
